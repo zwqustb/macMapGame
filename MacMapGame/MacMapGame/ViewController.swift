@@ -19,7 +19,7 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         return pItem
     }
     
-    lazy var m_areaPanel = AreaPanel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 200))
+    lazy var m_areaPanel = AreaPanel.init(frame: CGRect.init(x: 0, y: 0, width: 300, height: 400))
     @IBOutlet weak var m_pCollectView: NSCollectionView!
     var curSelectIndex:IndexPath = [0,0]
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         m_pCollectView.dataSource = self
         //控制台
         m_areaPanel.wantsLayer = true
-        m_areaPanel.layer?.backgroundColor = NSColor.red.cgColor
+        m_areaPanel.layer?.backgroundColor = NSColor.white.cgColor
         // Do any additional setup after loading the view.
     }
 
