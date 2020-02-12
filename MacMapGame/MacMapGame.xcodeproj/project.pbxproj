@@ -15,6 +15,7 @@
 		3B5C3E0123DED49600D96BA0 /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C3DFF23DED49600D96BA0 /* CollectionViewItem.xib */; };
 		3B82EC9023E1B373008CAC23 /* dicAllZeroArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */; };
 		3B82EC9223E1B3B2008CAC23 /* LanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */; };
+		3B82EC9423E1B4A2008CAC23 /* dicInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */; };
 		3B9AF56823DF13B9007C3B8D /* Panels.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9AF56723DF13B9007C3B8D /* Panels.xib */; };
 		3B9AF56C23E00057007C3B8D /* AreaPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9AF56B23E00057007C3B8D /* AreaPanel.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		3B5C3DFF23DED49600D96BA0 /* CollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
 		3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicAllZeroArea.swift; sourceTree = "<group>"; };
 		3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
+		3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicInitData.swift; sourceTree = "<group>"; };
 		3B9AF56723DF13B9007C3B8D /* Panels.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Panels.xib; sourceTree = "<group>"; };
 		3B9AF56B23E00057007C3B8D /* AreaPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */,
+				3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B82EC9423E1B4A2008CAC23 /* dicInitData.swift in Sources */,
 				3B82EC9023E1B373008CAC23 /* dicAllZeroArea.swift in Sources */,
 				3B5C3DEE23DD7E4500D96BA0 /* ViewController.swift in Sources */,
 				3B5C3DEC23DD7E4500D96BA0 /* AppDelegate.swift in Sources */,

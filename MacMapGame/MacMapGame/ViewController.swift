@@ -9,18 +9,19 @@
 import Cocoa
 
 class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionViewDataSource {
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1000
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let pItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CollectionViewItem"), for: indexPath)
-          
-        return pItem
-    }
+
     
     lazy var m_areaPanel = AreaPanel.init(frame: CGRect.init(x: 0, y: 0, width: 300, height: 400))
+    //地图
     @IBOutlet weak var m_pCollectView: NSCollectionView!
+    //顶部文本
+    @IBOutlet weak var lManPower: NSTextField!
+    @IBOutlet weak var lSkills: NSTextField!
+    @IBOutlet weak var lWeapon: NSTextField!
+    @IBOutlet weak var lMapLevel: NSTextField!
+    @IBOutlet weak var lTime: NSTextField!
+    
+    
     var curSelectIndex:IndexPath = [0,0]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         // Update the view, if already loaded.
         }
     }
+        //MARK:mark collection delegate
     //地图区块被点击
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         collectionView.deselectItems(at: indexPaths)
@@ -58,6 +60,17 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         
     }
 
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1000
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let pItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CollectionViewItem"), for: indexPath)
+          
+        return pItem
+    }
+
 
 }
 
+      

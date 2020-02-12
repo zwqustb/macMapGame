@@ -829,6 +829,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lManPower" destination="pN6-fz-dF0" id="r9V-qc-OiZ"/>
+                        <outlet property="lMapLevel" destination="v9c-dg-xq2" id="Tdo-1P-NR2"/>
+                        <outlet property="lSkills" destination="1YG-cO-Cu8" id="C9a-Rr-79E"/>
+                        <outlet property="lTime" destination="oz5-AK-hYt" id="rco-LN-u0N"/>
+                        <outlet property="lWeapon" destination="DJe-RC-YHS" id="IWX-C8-sSZ"/>
                         <outlet property="m_pCollectView" destination="klV-0u-bbl" id="LfV-bx-68P"/>
                     </connections>
                 </viewController>
