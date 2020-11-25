@@ -26,9 +26,9 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         //全屏
-        var pWindow = NSApplication.shared.keyWindow
-        pWindow = NSApplication.shared.windows.last
-        pWindow?.toggleFullScreen(nil)
+//        var pWindow = NSApplication.shared.keyWindow
+//        pWindow = NSApplication.shared.windows.last
+//        pWindow?.toggleFullScreen(nil)
         //四边形地图
         m_pCollectView.register(CollectionViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CollectionViewItem"))
         m_pCollectView.delegate = self
@@ -37,6 +37,7 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         m_areaPanel.wantsLayer = true
         m_areaPanel.layer?.backgroundColor = NSColor.white.cgColor
         // Do any additional setup after loading the view.
+//        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
     }
 
     override var representedObject: Any? {
@@ -57,11 +58,11 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
             pItem?.setSelectUI(true)
             self.view.addSubview(m_areaPanel)
         }
-        
+        //m_areaPanel.setPostion(pIndex?.count ?? 0)
     }
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1000
+        return MapConfig.getTotalNum()
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
@@ -70,7 +71,9 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         return pItem
     }
 
-
+    deinit {
+        
+    }
 }
 
       

@@ -14,6 +14,7 @@ class AreaPanel: NSView {
     @IBOutlet weak var btnSave: NSButton!
     @IBOutlet weak var btnChangeArea: NSButton!
     @IBOutlet var pXibView: NSView!
+    @IBOutlet weak var lPostion: NSTextField!
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         wantsLayer = true
@@ -31,6 +32,9 @@ class AreaPanel: NSView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+    }
+    func setPostion(_ x:Int){
+        
     }
     
 }

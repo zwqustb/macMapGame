@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B394B47245BF8EE00077751 /* SkillFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B394B46245BF8EE00077751 /* SkillFile.swift */; };
 		3B5C3DEC23DD7E4500D96BA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C3DEB23DD7E4500D96BA0 /* AppDelegate.swift */; };
 		3B5C3DEE23DD7E4500D96BA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C3DED23DD7E4500D96BA0 /* ViewController.swift */; };
 		3B5C3DF023DD7E4600D96BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C3DEF23DD7E4600D96BA0 /* Assets.xcassets */; };
@@ -16,11 +17,15 @@
 		3B82EC9023E1B373008CAC23 /* dicAllZeroArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */; };
 		3B82EC9223E1B3B2008CAC23 /* LanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */; };
 		3B82EC9423E1B4A2008CAC23 /* dicInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */; };
+		3B8FE3FF2567AE2100C043C9 /* MapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FE3FE2567AE2100C043C9 /* MapLayout.swift */; };
 		3B9AF56823DF13B9007C3B8D /* Panels.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9AF56723DF13B9007C3B8D /* Panels.xib */; };
 		3B9AF56C23E00057007C3B8D /* AreaPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9AF56B23E00057007C3B8D /* AreaPanel.swift */; };
+		3BFECC852564E6A300E015F5 /* MapConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFECC842564E6A300E015F5 /* MapConfig.swift */; };
+		3BFECC8B256511F800E015F5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFECC8A256511F800E015F5 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B394B46245BF8EE00077751 /* SkillFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillFile.swift; sourceTree = "<group>"; };
 		3B5C3DE823DD7E4400D96BA0 /* MacMapGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacMapGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5C3DEB23DD7E4500D96BA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B5C3DED23DD7E4500D96BA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,8 +38,11 @@
 		3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicAllZeroArea.swift; sourceTree = "<group>"; };
 		3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
 		3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicInitData.swift; sourceTree = "<group>"; };
+		3B8FE3FE2567AE2100C043C9 /* MapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLayout.swift; sourceTree = "<group>"; };
 		3B9AF56723DF13B9007C3B8D /* Panels.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Panels.xib; sourceTree = "<group>"; };
 		3B9AF56B23E00057007C3B8D /* AreaPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPanel.swift; sourceTree = "<group>"; };
+		3BFECC842564E6A300E015F5 /* MapConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfig.swift; sourceTree = "<group>"; };
+		3BFECC8A256511F800E015F5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,8 @@
 		3B5C3DFB23DD7FDF00D96BA0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3B8FE3FD2567ADE600C043C9 /* layout */,
+				3BFECC89256511D800E015F5 /* view */,
 				3B9AF56623DF1003007C3B8D /* pannals */,
 				3B5C3DFE23DED49600D96BA0 /* CollectionViewItem.swift */,
 				3B5C3DFF23DED49600D96BA0 /* CollectionViewItem.xib */,
@@ -95,6 +105,8 @@
 			children = (
 				3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */,
 				3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */,
+				3B394B46245BF8EE00077751 /* SkillFile.swift */,
+				3BFECC842564E6A300E015F5 /* MapConfig.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -107,6 +119,14 @@
 			path = func;
 			sourceTree = "<group>";
 		};
+		3B8FE3FD2567ADE600C043C9 /* layout */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FE3FE2567AE2100C043C9 /* MapLayout.swift */,
+			);
+			path = layout;
+			sourceTree = "<group>";
+		};
 		3B9AF56623DF1003007C3B8D /* pannals */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +134,14 @@
 				3B9AF56B23E00057007C3B8D /* AreaPanel.swift */,
 			);
 			path = pannals;
+			sourceTree = "<group>";
+		};
+		3BFECC89256511D800E015F5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3BFECC8A256511F800E015F5 /* MapView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,11 +216,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8FE3FF2567AE2100C043C9 /* MapLayout.swift in Sources */,
 				3B82EC9423E1B4A2008CAC23 /* dicInitData.swift in Sources */,
+				3B394B47245BF8EE00077751 /* SkillFile.swift in Sources */,
 				3B82EC9023E1B373008CAC23 /* dicAllZeroArea.swift in Sources */,
+				3BFECC852564E6A300E015F5 /* MapConfig.swift in Sources */,
 				3B5C3DEE23DD7E4500D96BA0 /* ViewController.swift in Sources */,
 				3B5C3DEC23DD7E4500D96BA0 /* AppDelegate.swift in Sources */,
 				3B82EC9223E1B3B2008CAC23 /* LanguageTool.swift in Sources */,
+				3BFECC8B256511F800E015F5 /* MapView.swift in Sources */,
 				3B5C3E0023DED49600D96BA0 /* CollectionViewItem.swift in Sources */,
 				3B9AF56C23E00057007C3B8D /* AreaPanel.swift in Sources */,
 			);
