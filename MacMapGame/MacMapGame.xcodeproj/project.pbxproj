@@ -14,6 +14,9 @@
 		3B5C3DF323DD7E4600D96BA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C3DF123DD7E4600D96BA0 /* Main.storyboard */; };
 		3B5C3E0023DED49600D96BA0 /* CollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C3DFE23DED49600D96BA0 /* CollectionViewItem.swift */; };
 		3B5C3E0123DED49600D96BA0 /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C3DFF23DED49600D96BA0 /* CollectionViewItem.xib */; };
+		3B70C816256E3A83006F30FE /* TerrainMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70C815256E3A83006F30FE /* TerrainMap.swift */; };
+		3B70C81B256E3EEF006F30FE /* CountryMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70C81A256E3EEF006F30FE /* CountryMap.swift */; };
+		3B70C821256E448C006F30FE /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70C820256E448C006F30FE /* UITools.swift */; };
 		3B82EC9023E1B373008CAC23 /* dicAllZeroArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */; };
 		3B82EC9223E1B3B2008CAC23 /* LanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */; };
 		3B82EC9423E1B4A2008CAC23 /* dicInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */; };
@@ -35,6 +38,9 @@
 		3B5C3DF523DD7E4600D96BA0 /* MacMapGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacMapGame.entitlements; sourceTree = "<group>"; };
 		3B5C3DFE23DED49600D96BA0 /* CollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewItem.swift; sourceTree = "<group>"; };
 		3B5C3DFF23DED49600D96BA0 /* CollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
+		3B70C815256E3A83006F30FE /* TerrainMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainMap.swift; sourceTree = "<group>"; };
+		3B70C81A256E3EEF006F30FE /* CountryMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMap.swift; sourceTree = "<group>"; };
+		3B70C820256E448C006F30FE /* UITools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		3B82EC8F23E1B373008CAC23 /* dicAllZeroArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicAllZeroArea.swift; sourceTree = "<group>"; };
 		3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
 		3B82EC9323E1B4A2008CAC23 /* dicInitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicInitData.swift; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		3B5C3DEA23DD7E4400D96BA0 /* MacMapGame */ = {
 			isa = PBXGroup;
 			children = (
+				3B70C81F256E4468006F30FE /* tools */,
+				3B70C814256E3599006F30FE /* maps */,
 				3B5C3DFD23DD7FEF00D96BA0 /* func */,
 				3B5C3DFC23DD7FE600D96BA0 /* data */,
 				3B5C3DFB23DD7FDF00D96BA0 /* UI */,
@@ -117,6 +125,23 @@
 				3B82EC9123E1B3B2008CAC23 /* LanguageTool.swift */,
 			);
 			path = func;
+			sourceTree = "<group>";
+		};
+		3B70C814256E3599006F30FE /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				3B70C815256E3A83006F30FE /* TerrainMap.swift */,
+				3B70C81A256E3EEF006F30FE /* CountryMap.swift */,
+			);
+			path = maps;
+			sourceTree = "<group>";
+		};
+		3B70C81F256E4468006F30FE /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				3B70C820256E448C006F30FE /* UITools.swift */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 		3B8FE3FD2567ADE600C043C9 /* layout */ = {
@@ -219,13 +244,16 @@
 				3B8FE3FF2567AE2100C043C9 /* MapLayout.swift in Sources */,
 				3B82EC9423E1B4A2008CAC23 /* dicInitData.swift in Sources */,
 				3B394B47245BF8EE00077751 /* SkillFile.swift in Sources */,
+				3B70C81B256E3EEF006F30FE /* CountryMap.swift in Sources */,
 				3B82EC9023E1B373008CAC23 /* dicAllZeroArea.swift in Sources */,
 				3BFECC852564E6A300E015F5 /* MapConfig.swift in Sources */,
 				3B5C3DEE23DD7E4500D96BA0 /* ViewController.swift in Sources */,
+				3B70C821256E448C006F30FE /* UITools.swift in Sources */,
 				3B5C3DEC23DD7E4500D96BA0 /* AppDelegate.swift in Sources */,
 				3B82EC9223E1B3B2008CAC23 /* LanguageTool.swift in Sources */,
 				3BFECC8B256511F800E015F5 /* MapView.swift in Sources */,
 				3B5C3E0023DED49600D96BA0 /* CollectionViewItem.swift in Sources */,
+				3B70C816256E3A83006F30FE /* TerrainMap.swift in Sources */,
 				3B9AF56C23E00057007C3B8D /* AreaPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

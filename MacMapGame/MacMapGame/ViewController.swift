@@ -21,6 +21,8 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
     @IBOutlet weak var lMapLevel: NSTextField!
     @IBOutlet weak var lTime: NSTextField!
     
+    var pTerrainMap = TerrainMap.init()
+    var pCountryMap = CountryMap.init()
     
     var curSelectIndex:IndexPath = [0,0]
     override func viewDidLoad() {
@@ -37,7 +39,9 @@ class ViewController: NSViewController,NSCollectionViewDelegate,NSCollectionView
         m_areaPanel.wantsLayer = true
         m_areaPanel.layer?.backgroundColor = NSColor.white.cgColor
         // Do any additional setup after loading the view.
-//        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+        self.view.addSubview(pCountryMap)
+        UITools.makeTwoViewSameFrame(pCountryMap, self.view)
+       
     }
 
     override var representedObject: Any? {
