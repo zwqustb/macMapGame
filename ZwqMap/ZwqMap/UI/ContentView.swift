@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: SavedPoint.entity(), sortDescriptors: [],predicate: nil) var aryPoints: FetchedResults<SavedPoint>
+    @FetchRequest(entity: SavedPoint.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \SavedPoint.groupIndex, ascending: true),NSSortDescriptor(keyPath: \SavedPoint.index, ascending: true)],predicate: nil) var aryPoints: FetchedResults<SavedPoint>
     
     @State private var rtTouch = CGRect.init()
 
-    
+    @EnvironmentObject private var ptData:PointData
     var body: some View {
         VStack{
             GeometryReader { geometry -> TouchableMap in
@@ -22,10 +22,9 @@ struct ContentView: View {
             }
             List(aryPoints, id: \.self) { pAny in
                 let pt = pAny as SavedPoint
-                Text("x:\(pt.xPos),y:\(pt.yPos)")
+                Text("x:\(pt.x),y:\(pt.y),group:\(pt.groupIndex),index:\(pt.index)")
             }.frame(width: nil, height: 100, alignment: .bottom)
         }
-        
     }
 }
 

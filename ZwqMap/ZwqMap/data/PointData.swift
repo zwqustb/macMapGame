@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 class PointData:ObservableObject{
-    @Published var aryCurPoints = [CGPoint]()
+    @Published var aryCurPoints = [SavedPoint]()
     @Published var bShowLine = false
-    func addObject(_ ptCur:CGPoint){
+    func addObject(_ ptCur:SavedPoint){
         aryCurPoints.append(ptCur)
     }
 }

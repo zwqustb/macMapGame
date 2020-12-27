@@ -9,13 +9,15 @@ import Cocoa
 import SwiftUI
 @main
 class AppDelegate: NSObject, NSApplicationDelegate,NSWindowDelegate {
-    
     var window: NSWindow!
-    
     var m_pPointData:PointData!
     //MARK:application delegate bgn
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         m_pPointData = PointData.init()
+        m_pPointData.bShowLine = true
+        let arySavedPoint = getAllData()
+        m_pPointData.aryCurPoints = arySavedPoint
+        MapConfig.lastSaveGroupIndex = Int(arySavedPoint.last?.groupIndex ?? 0)
         //初始化下coredata数据
         self.saveCoreData()
         let contentView = ContentView().environment(\.managedObjectContext, persistentContainer.viewContext).environmentObject(m_pPointData)
@@ -28,11 +30,10 @@ class AppDelegate: NSObject, NSApplicationDelegate,NSWindowDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
-        
+        //window区域变化时及时通知全局变量
         window.delegate = self
         refreshWindowHW(window)
        
-        
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -155,17 +156,19 @@ class AppDelegate: NSObject, NSApplicationDelegate,NSWindowDelegate {
     }
     func deleteAllCoreData(){
         let context = persistentContainer.viewContext
-        let result = getAllData()
+        let savePoints = getAllData()
         // 循环删除所有数据
-        for person in result {
-            context.delete(person)
+        for point in savePoints {
+            context.delete(point)
         }
         saveCoreData()
+        MapConfig.lastSaveGroupIndex = 0
     }
     // 获取所有数据
     func getAllData() -> [SavedPoint] {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest = SavedPoint.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \SavedPoint.groupIndex, ascending: true),NSSortDescriptor(keyPath: \SavedPoint.index, ascending: true)]
         do {
             let result = try context.fetch(fetchRequest)
             return result
@@ -184,13 +187,18 @@ class AppDelegate: NSObject, NSApplicationDelegate,NSWindowDelegate {
             m_pPointData.bShowLine = true
         }else if title.contains("保存"){
             self.saveCoreData()
+            MapConfig.lastSaveGroupIndex += 1
+            MapConfig.lastDrawingIndex = 0
         }else if title.contains("清除"){
             m_pPointData.aryCurPoints.removeAll()
             m_pPointData.bShowLine = false
+            MapConfig.lastDrawingIndex = 0
         }else if title.contains("清空"){
             self.deleteAllCoreData()
             m_pPointData.aryCurPoints.removeAll()
             m_pPointData.bShowLine = false
+            MapConfig.lastDrawingIndex = 0
+            MapConfig.lastSaveGroupIndex = 0
         }
     }
 }
