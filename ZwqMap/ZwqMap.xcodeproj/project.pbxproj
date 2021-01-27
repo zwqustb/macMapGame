@@ -21,6 +21,7 @@
 		3B63FFF9257095A600B55E37 /* MapConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B63FFF8257095A600B55E37 /* MapConfig.swift */; };
 		3BA59D86258C747F00DF0C6F /* TouchableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA59D85258C747F00DF0C6F /* TouchableMap.swift */; };
 		3BA59D8B258C74C800DF0C6F /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA59D8A258C74C800DF0C6F /* GeometryGetter.swift */; };
+		3BB559D325B039FF004632B5 /* MapDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB559D225B039FF004632B5 /* MapDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		3B63FFF8257095A600B55E37 /* MapConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConfig.swift; sourceTree = "<group>"; };
 		3BA59D85258C747F00DF0C6F /* TouchableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableMap.swift; sourceTree = "<group>"; };
 		3BA59D8A258C74C800DF0C6F /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		3BB559D225B039FF004632B5 /* MapDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				3B63FFF8257095A600B55E37 /* MapConfig.swift */,
 				3B6300032570984000B55E37 /* PointData.swift */,
+				3BB559D225B039FF004632B5 /* MapDefine.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				3B63FFB8256F4CC200B55E37 /* ContentView.swift in Sources */,
 				3B630009257099E100B55E37 /* DrawingMap.swift in Sources */,
 				3B63FFBB256F4CC200B55E37 /* ZwqMap.xcdatamodeld in Sources */,
+				3BB559D325B039FF004632B5 /* MapDefine.swift in Sources */,
 				3B63FFB6256F4CC200B55E37 /* AppDelegate.swift in Sources */,
 				3B63FFED256F53E800B55E37 /* Shapes.swift in Sources */,
 				3BA59D8B258C74C800DF0C6F /* GeometryGetter.swift in Sources */,

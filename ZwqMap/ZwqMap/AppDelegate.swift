@@ -181,6 +181,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,NSWindowDelegate {
     @IBAction func clickPointMenu(_ sender: NSMenuItem) {
         let title = sender.title
         if title.contains("刷新页面") {
+            MapConfig.eMapState = .point
             if m_pPointData.bShowLine {
                 m_pPointData.bShowLine = false
             }
@@ -199,6 +200,17 @@ class AppDelegate: NSObject, NSApplicationDelegate,NSWindowDelegate {
             m_pPointData.bShowLine = false
             MapConfig.lastDrawingIndex = 0
             MapConfig.lastSaveGroupIndex = 0
+        }
+    }
+    
+    @IBAction func clickGroupMenu(_ sender: NSMenuItem) {
+        let title = sender.title
+        switch title {
+        case "点选组":
+            MapConfig.eMapState = .group
+            break
+        default:
+            break
         }
     }
 }

@@ -24,27 +24,55 @@ struct TouchableMap: View {
                     .background(Color.gray)
                     .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .global).onEnded({ (value) in
                         let ptLoc = value.location
-                        //print("点击的位置,x:\(ptLoc.x),y:\(ptLoc.y)")
-                        let xInSuper = ptLoc.x - rect.origin.x
-                        let windowHeight = kWindowHeight
-//                      print("windowHeight:\(windowHeight)")
-                        let viewBottomPosFromB = windowHeight - rect.height - rect.origin.y
-//                      print("viewBottomPosFromB:\(viewBottomPosFromB)")
-                        let yInSuperFromTop = rect.size.height - (ptLoc.y - viewBottomPosFromB)
-//                      print("yInSuperFromTop:\(yInSuperFromTop)")
-                        let ptInSuperFromLT = CGPoint.init(x: xInSuper, y: yInSuperFromTop)
-                        let point = SavedPoint(context: self.moc)
-                        point.tips = "test"
-                        point.x = Float(ptInSuperFromLT.x)
-                        point.y = Float(ptInSuperFromLT.y)
-                        let lastPointIndex  = MapConfig.lastSaveGroupIndex
-                        let lastGropIndex = lastPointIndex  + 1
-                        point.index = Int64(MapConfig.lastDrawingIndex + 1)
-                        MapConfig.lastDrawingIndex += 1
-                        point.groupIndex = Int64(lastGropIndex)
-                        ptData.addObject(point)
-//                      try?self.moc.save()
+                        switch MapConfig.eMapState{
+                        case .point:
+                            handleClickInPointMode(ptLoc)
+                        default: break
+                            
+                        }
                     }))
+        
+    }
+    func handleClickInPointMode(_ ptLoc:CGPoint) {
+        //print("点击的位置,x:\(ptLoc.x),y:\(ptLoc.y)")
+        let xInSuper = ptLoc.x - rect.origin.x
+        let windowHeight = kWindowHeight
+//                      print("windowHeight:\(windowHeight)")
+        let viewBottomPosFromB = windowHeight - rect.height - rect.origin.y
+//                      print("viewBottomPosFromB:\(viewBottomPosFromB)")
+        let yInSuperFromTop = rect.size.height - (ptLoc.y - viewBottomPosFromB)
+//                      print("yInSuperFromTop:\(yInSuperFromTop)")
+        let ptInSuperFromLT = CGPoint.init(x: xInSuper, y: yInSuperFromTop)
+        let point = SavedPoint(context: self.moc)
+        point.tips = "test"
+        point.x = Float(ptInSuperFromLT.x)
+        point.y = Float(ptInSuperFromLT.y)
+        let lastPointIndex  = MapConfig.lastSaveGroupIndex
+        let lastGropIndex = lastPointIndex  + 1
+        point.index = Int64(MapConfig.lastDrawingIndex + 1)
+        MapConfig.lastDrawingIndex += 1
+        point.groupIndex = Int64(lastGropIndex)
+        ptData.addObject(point)
+        //添加组
+        var group:PointGroup!
+        let reqFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PointGroup")
+        reqFetch.predicate = NSPredicate(format: "groupIndex = %@", point.groupIndex)
+        let ret = try?self.moc.fetch(reqFetch) as? [PointGroup]
+        if ret == nil || ret?.count == 0 {
+            group = PointGroup(context: self.moc)
+        }else{
+            group = ret!.first!
+        }
+         
+        group.groupIndex = Int64(lastGropIndex)
+        group.minX = min(group.minX, point.x)
+        group.maxX = max(group.maxX,point.x)
+        group.maxY = max(group.maxY, point.y)
+        group.minY = min(group.minY, point.y)
+        group.level = Int16(MapConfig.nMapLevel)
+        group.name = "\(group.groupIndex)"
+    }
+    func handleClickInGroupMode(_ ptLoc:CGPoint){
         
     }
 }

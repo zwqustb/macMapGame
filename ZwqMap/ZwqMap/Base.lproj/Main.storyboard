@@ -86,6 +86,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="组的操作" id="FOQ-y4-h3L">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="组的操作" id="SXm-rh-Vk1">
+                                    <items>
+                                        <menuItem title="点选组" id="MEM-ps-1p3" userLabel="点选组">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickGroupMenu:" target="Voe-Tx-rLC" id="7k0-Hl-3yr"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
